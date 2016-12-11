@@ -1,4 +1,4 @@
-// function loadMapScenario() {
+function loadMapScenario() {
     var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
         credentials: 'AkXOPR73n33ySDiXHEoIiJodh58VRCLy-q6myErQF6m1ow8jzSThCI57vXwT8aFo'
     });
@@ -8,4 +8,4 @@
 var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), { icon: 'https://www.bingmapsportal.com/Content/images/poi_custom.png',
     anchor: new Microsoft.Maps.Point(12, 39) });
 map.entities.push(pushpin)
-// }
+}
