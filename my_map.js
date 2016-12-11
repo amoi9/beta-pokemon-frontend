@@ -18,7 +18,7 @@ map_manager.map_items = [
     },
 ]
 
-function get_count_down_from_timestap(expire) {
+function get_count_down_from_timestamp(expire) {
     var now_time = new Date().getTime() / 1000;
     var time_left = expire - now_time;
     var second = Math.floor(time_left % 60);
@@ -44,7 +44,7 @@ function refresh_pokemons() {
             new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]),
             { 
                 icon: icon_url,
-                title: get_count_down_from_timestap(map_item["expiration_timestamp_ms"]),
+                title: get_count_down_from_timestamp(map_item["expiration_timestamp_ms"]),
             }); 
         pushpins.push(pushpin);
     }
