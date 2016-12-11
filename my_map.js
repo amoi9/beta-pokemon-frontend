@@ -35,7 +35,7 @@ function loadMapScenario() {
     refresh_pokemons();
 }
 
-function refresh_pokemon() {
+function refresh_pokemons() {
     var pushpins = []
     for (var i in map_manager.map_items) {
         map_item = map_manager.map_items[i]
