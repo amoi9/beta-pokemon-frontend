@@ -32,7 +32,7 @@ function loadMapScenario() {
     });
     map_manager.map = map
     
-    refresh_pokemons();
+    Window.setInterval(refresh_pokemons(), 1000);
 }
 
 function refresh_pokemons() {
