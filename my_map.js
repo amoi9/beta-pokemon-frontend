@@ -26,9 +26,12 @@ function loadMapScenario() {
     
     for (var i in map_manager.map_items) {
         map_item = map_manager.map_items[i]
-        var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), { 
-            icon: 'https://raw.githubusercontent.com/chenditc/mypokemon.io/gh-pages/images/pushpin_images/pokemon/' + map_item["pokemon_id"] +'.png'
-        });
+        var pushpin = new Microsoft.Maps.Pushpin(
+            map.getCenter(), 
+            new Microsoft.Maps.Location(latitude: map_item["latitude"], longitude: map_item["longtitude"]),
+            { 
+                icon: 'https://raw.githubusercontent.com/chenditc/mypokemon.io/gh-pages/images/pushpin_images/pokemon/' + map_item["pokemon_id"] +'.png'
+            }); 
         map.entities.push(pushpin);
     }
 }
