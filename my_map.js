@@ -4,7 +4,6 @@ var map_manager = {
 }
 
 map_manager.map_items = [
-    // 37.5431370,-122.2601100
     {
         "pokemon_id": 12,
         "expiration_timestamp_ms": 1481423394,
