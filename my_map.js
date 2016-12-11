@@ -28,7 +28,7 @@ function loadMapScenario() {
         map_item = map_manager.map_items[i]
         var pushpin = new Microsoft.Maps.Pushpin(
             map.getCenter(), 
-            new Microsoft.Maps.Location(latitude: map_item["latitude"], longitude: map_item["longtitude"]),
+            new Microsoft.Maps.Location(map_item["latitude"], map_item["longtitude"]),
             { 
                 icon: 'https://raw.githubusercontent.com/chenditc/mypokemon.io/gh-pages/images/pushpin_images/pokemon/' + map_item["pokemon_id"] +'.png'
             }); 
