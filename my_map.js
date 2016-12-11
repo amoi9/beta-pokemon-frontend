@@ -32,6 +32,10 @@ function loadMapScenario() {
     });
     map_manager.map = map
     
+}
+
+function refresh_pokemon() {
+    var pushpins = []
     for (var i in map_manager.map_items) {
         map_item = map_manager.map_items[i]
         var icon_url = 'https://raw.githubusercontent.com/chenditc/mypokemon.io/gh-pages/images/pushpin_images/pokemon/' + map_item["pokemon_id"] +'.png'
@@ -41,6 +45,15 @@ function loadMapScenario() {
                 icon: icon_url,
                 title: get_count_down_from_timestap(map_item["expiration_timestamp_ms"]),
             }); 
-        map.entities.push(pushpin);
+        pushpins.push(pushpin);
     }
+    
+    var layer = new Microsoft.Maps.Layer();
+    layer.add(pushpins);
+    
+    map_manager.map.layers.clear();
+    
+    map_manager.map.layers.insert(layer);
 }
+
+refresh_pokemons();
