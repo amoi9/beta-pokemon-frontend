@@ -32,6 +32,7 @@ function loadMapScenario() {
     });
     map_manager.map = map
     
+    refresh_pokemons();
 }
 
 function refresh_pokemon() {
@@ -55,5 +56,3 @@ function refresh_pokemon() {
     
     map_manager.map.layers.insert(layer);
 }
-
-refresh_pokemons();
