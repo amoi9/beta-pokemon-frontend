@@ -7,14 +7,14 @@ map_manager.map_items = [
     {
         "pokemon_id": 12,
         "expiration_timestamp_ms": 1481423394,
-        "latitude": -51.5033640,
-        "longtitude": -0.1276240,
+        "latitude": 51.5033640,
+        "longitude": -0.1276240,
     },
     {
         "pokemon_id": 2,
         "expiration_timestamp_ms": 1481423394,
-        "latitude": -51.5033640,
-        "longtitude": -0.1276230,
+        "latitude": 51.5133640,
+        "longitude": -0.1286230,
     },
 ]
 
@@ -28,7 +28,7 @@ function loadMapScenario() {
         map_item = map_manager.map_items[i]
         var pushpin = new Microsoft.Maps.Pushpin(
             map.getCenter(), 
-            new Microsoft.Maps.Location(map_item["latitude"], map_item["longtitude"]),
+            new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]),
             { 
                 icon: 'https://raw.githubusercontent.com/chenditc/mypokemon.io/gh-pages/images/pushpin_images/pokemon/' + map_item["pokemon_id"] +'.png'
             }); 
