@@ -19,6 +19,14 @@ map_manager.map_items = [
     },
 ]
 
+function get_count_down_from_timestap(expire) {
+    var now_time = new Date().getTime() / 1000;
+    var time_left = expire - now_time;
+    var second = Math.floor(time_left % 60);
+    var minute = Math.floor(time_left / 60);
+    return minute + ":" + second;
+}
+
 function loadMapScenario() {
     var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
         credentials: 'AkXOPR73n33ySDiXHEoIiJodh58VRCLy-q6myErQF6m1ow8jzSThCI57vXwT8aFo'
@@ -27,10 +35,12 @@ function loadMapScenario() {
     
     for (var i in map_manager.map_items) {
         map_item = map_manager.map_items[i]
+        var icon_url = 'https://raw.githubusercontent.com/chenditc/mypokemon.io/gh-pages/images/pushpin_images/pokemon/' + map_item["pokemon_id"] +'.png'
         var pushpin = new Microsoft.Maps.Pushpin(
             new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]),
             { 
-                icon: 'https://raw.githubusercontent.com/chenditc/mypokemon.io/gh-pages/images/pushpin_images/pokemon/' + map_item["pokemon_id"] +'.png'
+                icon: icon_url,
+                title: get_count_down_from_timestap(map_item["expiration_timestamp_ms"]),
             }); 
         map.entities.push(pushpin);
     }
