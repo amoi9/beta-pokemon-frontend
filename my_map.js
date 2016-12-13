@@ -6,13 +6,13 @@ var map_manager = {
 map_manager.map_items = [
     {
         "pokemon_id": 12,
-        "expiration_timestamp_ms": 1481433445,
+        "expire": 1481433445,
         "latitude": 37.54,
         "longitude": -122.26,
     },
     {
         "pokemon_id": 2,
-        "expiration_timestamp_ms": 1481433443,
+        "expire": 1481433443,
         "latitude": 37.55,
         "longitude": -122.25,
     },
@@ -63,7 +63,7 @@ function refresh_pokemons() {
             new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]),
             { 
                 icon: icon_url,
-                title: get_count_down_from_timestamp(map_item["expiration_timestamp_ms"]),
+                title: get_count_down_from_timestamp(map_item["expire"]),
             }); 
         pushpins.push(pushpin);
     }
