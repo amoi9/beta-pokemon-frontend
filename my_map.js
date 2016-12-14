@@ -31,6 +31,7 @@ function query_pokemon_data() {
 
     apigClient.mapPokemonGet(params, {}, {})
         .then(function(result) {
+          console.log(result);
           map_manager.map_items = result.data;
         }).catch( function(result){
           console.log(result);
